@@ -1,0 +1,37 @@
+package Controller;
+
+import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class DashBoardFormController {
+    Stage ItemManagement = new Stage();
+    Stage customerManagement = new Stage();
+    @FXML
+    private JFXButton btnCustomermgt;
+
+    @FXML
+    private JFXButton btnManageItem;
+
+    @FXML
+    void customerButtonClickAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void itemButtonClickAction(ActionEvent event) {
+        try {
+            ItemManagement.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/ItemManagement.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        ItemManagement.setResizable(false);
+        ItemManagement.show();
+    }
+
+}
