@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="432.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerManager.CustomerManagementFormController">
+   <children>
+      <TableView fx:id="TblCustomer" layoutX="7.0" layoutY="21.0" prefHeight="219.0" prefWidth="729.0">
+        <columns>
+          <TableColumn fx:id="custId" prefWidth="75.0" text="Customer ID" />
+          <TableColumn fx:id="custTitle" prefWidth="97.0" text="Customer Title" />
+            <TableColumn fx:id="custName" prefWidth="96.0" text="Customer Name" />
+            <TableColumn fx:id="DOB" prefWidth="64.0" text="DOB" />
+            <TableColumn fx:id="Salary" prefWidth="76.0" text="Salary" />
+            <TableColumn fx:id="Address" prefWidth="82.0" text="Cust Address" />
+            <TableColumn fx:id="City" prefWidth="66.0" text="City" />
+            <TableColumn fx:id="Province" text="Province" />
+            <TableColumn fx:id="postalCode" prefWidth="92.0" text="PostalCode" />
+        </columns>
+      </TableView>
+      <Label layoutX="23.0" layoutY="270.0" text="Customeer Id: ">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="310.0" text="Customer Title :">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="349.0" text="Customer Name: ">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="275.0" layoutY="268.0" text="Date Of Birth: ">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="277.0" layoutY="310.0" text="Salary: ">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="278.0" layoutY="349.0" text="Address: ">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="522.0" layoutY="268.0" text="City: ">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="521.0" layoutY="310.0" text="Province: ">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="520.0" layoutY="349.0" text="Postal Code: ">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtCusId" layoutX="128.0" layoutY="264.0" />
+      <JFXTextField fx:id="txtCustTitle" layoutX="130.0" layoutY="298.0" />
+      <JFXTextField fx:id="txtCustName" layoutX="134.0" layoutY="337.0" />
+      <JFXTextField fx:id="txtDOB" layoutX="373.0" layoutY="262.0" />
+      <JFXTextField fx:id="txtSalary" layoutX="374.0" layoutY="296.0" />
+      <JFXTextField fx:id="txtAddress" layoutX="374.0" layoutY="335.0" />
+      <JFXTextField fx:id="txtCity" layoutX="597.0" layoutY="262.0" />
+      <JFXTextField fx:id="txtProvince" layoutX="600.0" layoutY="296.0" />
+      <JFXTextField fx:id="txtPostalCode" layoutX="600.0" layoutY="335.0" />
+      <JFXButton fx:id="btnAdd" layoutX="73.0" layoutY="380.0" onAction="#BtnAddOnAction" text="Add" textFill="#00d304">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" layoutX="539.0" layoutY="380.0" onAction="#BtnUpdateOnAction" text="Update" textFill="#2c1fb9">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" layoutX="288.0" layoutY="380.0" onAction="#BtnDeleteOnAction" text="Delete" textFill="RED">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

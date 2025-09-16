@@ -20,7 +20,13 @@ public class DashBoardFormController {
 
     @FXML
     void customerButtonClickAction(ActionEvent event) {
-
+        try {
+            customerManagement.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/CustomerManagement.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        customerManagement.setResizable(false);
+        customerManagement.show();
     }
 
     @FXML
@@ -33,5 +39,5 @@ public class DashBoardFormController {
         ItemManagement.setResizable(false);
         ItemManagement.show();
     }
-
 }
+

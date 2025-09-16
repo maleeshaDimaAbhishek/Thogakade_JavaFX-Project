@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Item;
 import javafx.scene.control.TableView;
@@ -63,12 +62,22 @@ public class ItemManagementFormController implements Initializable {
     ItemManagementService itemManagementService=new ItemManagmentController();
     @FXML
     void DeleteButtonOnAction(ActionEvent event) {
-
+        String  ItemCode = txtItemCode.getText();
+        itemManagementService.DeleteItem(ItemCode);
+        clearTextAreas();
+        loadItems();
     }
 
     @FXML
     void UpdateButtonOnAction(ActionEvent event) {
-
+        String  ItemCode = txtItemCode.getText();
+        String Description = txtDescription.getText();
+        String PackSize = txtPackSize.getText();
+        Double UnitPrice = Double.parseDouble(txtUnitPrice.getText());
+        int Quantity = Integer.parseInt(txtQuantity.getText());
+        itemManagementService.UpdateItem(ItemCode,Description,PackSize,UnitPrice,Quantity);
+        clearTextAreas();
+        loadItems();
     }
 
     @FXML
@@ -79,11 +88,19 @@ public class ItemManagementFormController implements Initializable {
         Double UnitPrice = Double.parseDouble(txtUnitPrice.getText());
         int Quantity = Integer.parseInt(txtQuantity.getText());
         itemManagementService.AddItem(ItemCode,Description,PackSize,UnitPrice,Quantity);
+        clearTextAreas();
         loadItems();
     }
     private void loadItems(){
         itemDetails.clear();
         tblItem.setItems(itemManagementService.getAll());
+    }
+    private void clearTextAreas(){
+        txtItemCode.setText("");
+        txtDescription.setText("");
+        txtPackSize.setText("");
+        txtUnitPrice.setText("");
+        txtQuantity.setText("");
     }
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

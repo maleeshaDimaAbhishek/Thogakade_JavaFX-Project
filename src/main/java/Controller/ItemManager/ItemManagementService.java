@@ -5,7 +5,7 @@ import model.Item;
 
 public interface ItemManagementService {
     void AddItem(String ItemCode, String Description, String PackSize, Double UnitPrice, int Quantity);
-    void DeleteItem(int RoomNumber);
-    void UpdateItem(String roomType,Double pricePerNight,String description,String roomStatus,int roomNumber);
+    void DeleteItem(String ItemCode);
+    void UpdateItem(String ItemCode, String Description, String PackSize, Double UnitPrice, int Quantity);
     ObservableList<Item> getAll();
 }

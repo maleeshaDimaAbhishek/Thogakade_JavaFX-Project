@@ -9,22 +9,22 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashBoardFormController">
    <children>
-      <Label layoutX="225.0" layoutY="-10.0" prefHeight="77.0" prefWidth="210.0" text="ToGaKaDe">
-         <font>
-            <Font name="Times New Roman Bold" size="24.0" />
-         </font>
-      </Label>
-      <JFXButton fx:id="btnManageItem" layoutX="61.0" layoutY="93.0" onAction="#itemButtonClickAction" text="Manage Item ">
-         <font>
-            <Font name="Times New Roman Bold" size="18.0" />
-         </font>
-      </JFXButton>
-      <ImageView fitHeight="256.0" fitWidth="336.0" layoutX="174.0" layoutY="125.0" opacity="0.74" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/logo.jpeg" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnCustomermgt" layoutX="371.0" layoutY="93.0" onAction="#customerButtonClickAction" text="Manage Customer">
+      <JFXButton fx:id="btnCustomermgt" layoutX="395.0" layoutY="241.0" onAction="#customerButtonClickAction" text="Manage Customer">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="259.0" prefHeight="77.0" prefWidth="210.0" text="ToGaKaDe">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnManageItem" layoutX="395.0" layoutY="194.0" onAction="#itemButtonClickAction" text="Manage Item ">
          <font>
             <Font name="Times New Roman Bold" size="18.0" />
          </font>
