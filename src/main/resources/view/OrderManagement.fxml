@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OrderManager.OrderFormManagementController">
+   <children>
+      <TableView fx:id="tblOrders" layoutX="139.0" layoutY="28.0" prefHeight="203.0" prefWidth="323.0">
+        <columns>
+          <TableColumn fx:id="tblOrderId" prefWidth="112.0" text="Order ID" />
+          <TableColumn fx:id="tblOrderDate" prefWidth="98.0" text="Order Date" />
+            <TableColumn fx:id="tblCustId" prefWidth="112.0" text="CustomerId" />
+        </columns>
+      </TableView>
+      <Label layoutX="56.0" layoutY="274.0" text="Order Id:">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="184.0" layoutY="318.0" text="Customer Id:">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="265.0" layoutY="277.0" text="Order Date:">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtOrderId" layoutX="116.0" layoutY="270.0" />
+      <JFXTextField fx:id="txtCustomerId" layoutX="270.0" layoutY="313.0" />
+      <JFXTextField fx:id="txtOrderDate" layoutX="345.0" layoutY="270.0" />
+      <JFXButton fx:id="btnPlaceOrder" layoutX="26.0" layoutY="71.0" onAction="#btnPlaceOrderOnAction" text="Place Order">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" layoutX="26.0" layoutY="115.0" onAction="#btnUpdateOrderOnAction" text="Update Order">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

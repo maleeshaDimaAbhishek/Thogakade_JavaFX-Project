@@ -12,11 +12,33 @@ import java.io.IOException;
 public class DashBoardFormController {
     Stage ItemManagement = new Stage();
     Stage customerManagement = new Stage();
+    Stage orderManagement=new Stage();
     @FXML
     private JFXButton btnCustomermgt;
 
     @FXML
     private JFXButton btnManageItem;
+    @FXML
+    private JFXButton btnManageOrder;
+
+    @FXML
+    private JFXButton btnManageOrderDetails;
+
+    @FXML
+    void ManageOrderButtonClickAction(ActionEvent event) {
+        try {
+            orderManagement.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/OrderManagement.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        orderManagement.setResizable(false);
+        orderManagement.show();
+    }
+
+    @FXML
+    void ManageOrderDetailsButtonClickAction(ActionEvent event) {
+
+    }
 
     @FXML
     void customerButtonClickAction(ActionEvent event) {
