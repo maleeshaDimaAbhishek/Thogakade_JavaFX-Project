@@ -13,6 +13,7 @@ public class DashBoardFormController {
     Stage ItemManagement = new Stage();
     Stage customerManagement = new Stage();
     Stage orderManagement=new Stage();
+    Stage orderDetailsManager=new Stage();
     @FXML
     private JFXButton btnCustomermgt;
 
@@ -37,7 +38,13 @@ public class DashBoardFormController {
 
     @FXML
     void ManageOrderDetailsButtonClickAction(ActionEvent event) {
-
+        try {
+            orderDetailsManager.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/OrderDetailsManagement.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        orderDetailsManager.setResizable(false);
+        orderDetailsManager.show();
     }
 
     @FXML
