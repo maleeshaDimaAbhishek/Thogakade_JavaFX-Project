@@ -5,7 +5,7 @@ import model.OrderDetails;
 import model.Orders;
 
 public interface OrderDetailsService {
-    void updateOrderDetails(String itemCode,String orderQuantity,Double discount,Double total);
-    void deleteOrderDetails(String orderId,String orderDate,String customerId);
+    void updateOrderDetails(String orderId, String itemCode, int orderQunatity,int discount);
+    void deleteOrderDetails(String orderId);
     ObservableList<OrderDetails> getAll();
 }

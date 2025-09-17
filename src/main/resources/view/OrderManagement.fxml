@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OrderManager.OrderFormManagementController">
    <children>
       <TableView fx:id="tblOrders" layoutX="139.0" layoutY="28.0" prefHeight="203.0" prefWidth="323.0">
@@ -42,6 +41,11 @@
          </font>
       </JFXButton>
       <JFXButton fx:id="btnUpdate" layoutX="26.0" layoutY="115.0" onAction="#btnUpdateOrderOnAction" text="Update Order">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" layoutX="26.0" layoutY="166.0" onAction="#btnDeleteOrderOnAction" text="Delete Order">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
          </font>

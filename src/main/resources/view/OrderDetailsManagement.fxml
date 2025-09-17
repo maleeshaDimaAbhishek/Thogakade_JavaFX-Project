@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="btnUpdate" onDragDetected="#btnUpdateOnAction" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OrderDetailsManager.OrderDetailsFormController">
+<AnchorPane fx:id="val" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OrderDetailsManager.OrderDetailsFormController">
    <children>
       <TableView fx:id="TblOrderDetails" layoutX="35.0" layoutY="26.0" prefHeight="197.0" prefWidth="531.0">
         <columns>
@@ -29,29 +29,35 @@
             <Font name="Times New Roman Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="282.0" layoutY="299.0" text="Discount:">
+      <Label layoutX="388.0" layoutY="304.0" text="Discount:">
          <font>
             <Font name="Times New Roman Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="282.0" layoutY="258.0" text="Total: ">
+      <Label layoutX="388.0" layoutY="263.0" text="Total: ">
          <font>
             <Font name="Times New Roman Bold" size="14.0" />
          </font>
       </Label>
       <JFXTextField fx:id="txtItemCode" layoutX="91.0" layoutY="250.0" />
       <JFXTextField fx:id="txtOrderQuantity" layoutX="124.0" layoutY="289.0" />
-      <JFXTextField fx:id="txtDiscount" layoutX="345.0" layoutY="289.0" />
-      <JFXTextField fx:id="txtTotal" layoutX="323.0" layoutY="253.0" />
+      <JFXTextField fx:id="txtDiscount" layoutX="451.0" layoutY="294.0" />
+      <JFXTextField fx:id="txtTotal" layoutX="429.0" layoutY="258.0" />
       <JFXButton fx:id="btnDelete" layoutX="147.0" layoutY="353.0" onAction="#btnDeleteOnAction" text="Delete" textFill="#e80404">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="304.0" layoutY="353.0" text="Update" textFill="#35d711">
+      <JFXButton fx:id="buttonUpdate" layoutX="304.0" layoutY="353.0" onAction="#btnUpdateOnAction" text="Update" textFill="#35d711">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
          </font>
       </JFXButton>
+      <Label layoutX="205.0" layoutY="282.0" text="Order ID: ">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtOrderId" editable="false" layoutX="282.0" layoutY="278.0" />
    </children>
 </AnchorPane>

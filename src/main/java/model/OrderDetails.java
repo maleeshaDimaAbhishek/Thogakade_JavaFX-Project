@@ -12,6 +12,6 @@ public class OrderDetails {
     private String item_Code;
     private int quantity;
     private int discount;
-   // private Double total;
+    private Double total;
 
 }

@@ -56,6 +56,18 @@ public class OrderManagementController implements OrderManagementService{
     }
 
     @Override
+    public void deleteOrder(String orderID) {
+        try{
+            String SQL = "DELETE FROM Orders WHERE OrderID = ?;";
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setObject(1,orderID);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public ObservableList<Orders> getAll() {
         ObservableList<Orders> ordersList= FXCollections.observableArrayList();
         try {

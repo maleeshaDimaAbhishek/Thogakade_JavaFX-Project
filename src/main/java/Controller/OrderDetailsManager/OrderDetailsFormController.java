@@ -36,6 +36,8 @@ public class OrderDetailsFormController implements Initializable {
 
     @FXML
     private JFXButton btnDelete;
+    @FXML
+    private JFXButton buttonUpdate;
 
     @FXML
     private AnchorPane btnUpdate;
@@ -54,17 +56,26 @@ public class OrderDetailsFormController implements Initializable {
 
     @FXML
     private JFXTextField txtTotal;
-
+    @FXML
+    private JFXTextField txtOrderId;
     ObservableList<OrderDetails> orders = FXCollections.observableArrayList();
     OrderDetailsService orderDetailsService=new OrderDetailsController();
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        orderDetailsService.deleteOrderDetails(txtOrderId.getText());
+        clearTextAreas();
+        loadItems();
     }
 
     @FXML
-    void btnUpdateOnAction(MouseEvent event) {
-
+    void btnUpdateOnAction(ActionEvent event) {
+        String orderId= txtOrderId.getText();
+        String itemCode = txtItemCode.getText();
+        int quantity = Integer.parseInt(txtOrderQuantity.getText());
+        int discount = Integer.parseInt(txtDiscount.getText());
+        orderDetailsService.updateOrderDetails(orderId,itemCode,quantity,discount);
+        clearTextAreas();
+        loadItems();
     }
     private void loadItems(){
         orders.clear();
@@ -75,6 +86,7 @@ public class OrderDetailsFormController implements Initializable {
         txtOrderQuantity.setText("");
         txtDiscount.setText("");
         txtTotal.setText("");
+        txtOrderId.setText("");
 
     }
     @Override
@@ -83,7 +95,7 @@ public class OrderDetailsFormController implements Initializable {
         Item_Code.setCellValueFactory(new PropertyValueFactory<>("item_Code"));
         Order_Quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         Discount.setCellValueFactory(new PropertyValueFactory<>("discount"));
-        //total.setCellValueFactory(new PropertyValueFactory<>("total"));
+        total.setCellValueFactory(new PropertyValueFactory<>("total"));
 
 
         loadItems();
@@ -93,7 +105,8 @@ public class OrderDetailsFormController implements Initializable {
                 txtItemCode.setText(newValue.getItem_Code());
                 txtOrderQuantity.setText(String.valueOf(newValue.getQuantity()));
                 txtDiscount.setText(String.valueOf(newValue.getDiscount()));
-                //txtTotal.setText(String.valueOf(newValue.getTotal()));
+                txtTotal.setText(String.valueOf(newValue.getTotal()));
+                txtOrderId.setText(newValue.getOrderId());
             }
         }));
     }

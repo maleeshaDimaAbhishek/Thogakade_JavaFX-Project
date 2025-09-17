@@ -17,7 +17,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class OrderFormManagementController implements Initializable {
-
+    @FXML
+    private JFXButton btnDelete;
     @FXML
     private JFXButton btnPlaceOrder;
 
@@ -79,6 +80,12 @@ public class OrderFormManagementController implements Initializable {
             clearTextAreas();
             loadItems();
         }
+    }
+    @FXML
+    void btnDeleteOrderOnAction(ActionEvent event) {
+        orderManagementService.deleteOrder(txtOrderId.getText());
+        clearTextAreas();
+        loadItems();
     }
     private void loadItems(){
         orders.clear();
