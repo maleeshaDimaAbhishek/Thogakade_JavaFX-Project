@@ -13,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.Item;
 import javafx.scene.control.TableView;
 
+import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -62,34 +63,57 @@ public class ItemManagementFormController implements Initializable {
     ItemManagementService itemManagementService=new ItemManagmentController();
     @FXML
     void DeleteButtonOnAction(ActionEvent event) {
-        String  ItemCode = txtItemCode.getText();
-        itemManagementService.DeleteItem(ItemCode);
-        clearTextAreas();
-        loadItems();
+        if(txtItemCode.getText()==""){
+            JOptionPane.showMessageDialog(null,
+                    "Please Fill All data: ",
+                    "Empty Area Detected",
+                    JOptionPane.ERROR_MESSAGE);
+        }else{
+            itemManagementService.DeleteItem(txtItemCode.getText());
+            clearTextAreas();
+            loadItems();
+        }
+
     }
 
     @FXML
     void UpdateButtonOnAction(ActionEvent event) {
-        String  ItemCode = txtItemCode.getText();
-        String Description = txtDescription.getText();
-        String PackSize = txtPackSize.getText();
-        Double UnitPrice = Double.parseDouble(txtUnitPrice.getText());
-        int Quantity = Integer.parseInt(txtQuantity.getText());
-        itemManagementService.UpdateItem(ItemCode,Description,PackSize,UnitPrice,Quantity);
-        clearTextAreas();
-        loadItems();
+        if (txtItemCode.getText()=="") {
+            JOptionPane.showMessageDialog(null,
+                    "Please Fill All data: ",
+                    "Empty Area Detected",
+                    JOptionPane.ERROR_MESSAGE);
+        }else {
+
+            String  ItemCode = txtItemCode.getText();
+            String Description = txtDescription.getText();
+            String PackSize = txtPackSize.getText();
+            Double UnitPrice = Double.parseDouble(txtUnitPrice.getText());
+            int Quantity = Integer.parseInt(txtQuantity.getText());
+            itemManagementService.UpdateItem(ItemCode,Description,PackSize,UnitPrice,Quantity);
+            clearTextAreas();
+            loadItems();
+        }
     }
 
     @FXML
     void addButtonOnAction(ActionEvent event) {
-        String  ItemCode = txtItemCode.getText();
-        String Description = txtDescription.getText();
-        String PackSize = txtPackSize.getText();
-        Double UnitPrice = Double.parseDouble(txtUnitPrice.getText());
-        int Quantity = Integer.parseInt(txtQuantity.getText());
-        itemManagementService.AddItem(ItemCode,Description,PackSize,UnitPrice,Quantity);
-        clearTextAreas();
-        loadItems();
+        if(txtItemCode.getText()==""){
+            JOptionPane.showMessageDialog(null,
+                    "Please Fill All data: ",
+                    "Empty Area Detected",
+                    JOptionPane.ERROR_MESSAGE);
+        }else{
+            String  ItemCode = txtItemCode.getText();
+            String Description = txtDescription.getText();
+            String PackSize = txtPackSize.getText();
+            Double UnitPrice = Double.parseDouble(txtUnitPrice.getText());
+            int Quantity = Integer.parseInt(txtQuantity.getText());
+            itemManagementService.AddItem(ItemCode,Description,PackSize,UnitPrice,Quantity);
+            clearTextAreas();
+            loadItems();
+        }
+
     }
     private void loadItems(){
         itemDetails.clear();
